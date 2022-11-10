@@ -14,7 +14,7 @@
 
 #include "get_next_line.h"
 
-char	*get_line(char *stash)
+char	*get_the_line(char *stash)
 {
 	char	*line;
 	int		i;
@@ -103,7 +103,7 @@ char	*get_next_line(int fd)
 	stash[fd] = readed_line(fd, stash[fd]);
 	if (!stash[fd])
 		return (NULL);
-	line = get_line(stash[fd]);
+	line = get_the_line(stash[fd]);
 	stash[fd] = clean_stash(stash[fd]);
 	return (line);
 }

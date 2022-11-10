@@ -19,7 +19,7 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 size_t	ft_strlen(char *str);
 char	*ft_strchr(char *s, int c);
-char	*get_line(char *stash);
+char	*get_the_line(char *stash);
 char	*readed_line(int fd, char *stash);
 char	*clean_stash(char *stash);
 

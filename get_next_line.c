@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*get_line(char *stash)
+char	*get_the_line(char *stash)
 {
 	char	*line;
 	int		i;
@@ -54,6 +54,7 @@ char	*readed_line(int fd, char *stash)
 		bytes_read = read(fd, buff, BUFFER_SIZE);
 		if (bytes_read == -1)
 		{
+			free(stash);
 			free(buff);
 			return (NULL);
 		}
@@ -100,7 +101,7 @@ char	*get_next_line(int fd)
 	stash = readed_line(fd, stash);
 	if (!stash)
 		return (NULL);
-	line = get_line(stash);
+	line = get_the_line(stash);
 	stash = clean_stash(stash);
 	return (line);
 }
