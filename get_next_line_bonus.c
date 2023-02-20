@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_the_line(char *stash)
 {
@@ -95,10 +93,10 @@ char	*clean_stash(char *stash)
 
 char	*get_next_line(int fd)
 {
-	static char	*stash[257];
+	static char	*stash[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	stash[fd] = readed_line(fd, stash[fd]);
 	if (!stash[fd])
